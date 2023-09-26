@@ -1,16 +1,99 @@
 ---
+import Layout from "../layouts/layout.astro";
+import Header from "../components/Header.astro";
+import Block from "../components/Block.astro";
+import {dormitory7} from '../bd.json'
+import Footer from "../components/Footer.astro";
 
+let floorNumber = dormitory7.floors
+let floors = []
+for (let i=1; i<=floorNumber; i++) {
+	floors.push(`${i} поверх`)
+}
+
+console.log(floors)
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Settlement | Knutd">
+	<Header/>
+	<div class="wrapper">
+		<div class="mt-[40px] flex justify-between">
+			<ul class="floors">
+				{floors.map(item => (<li> {item} </li>))}
+			</ul>
+			<div class="dormitory_number">Гуртожиток&nbsp№7</div>
+		</div>
+		<div class="flex-col items-center">
+			<Block cell="1" circuitLink="public/circuits/Group 322.svg"/>
+			<Block cell="2" circuitLink="public/circuits/Group 323.svg"/>
+			<Block cell="3" circuitLink="public/circuits/Group 324.svg"/>
+		</div>
+		<div class="info h-[100px] w-[100%] rounded-[20px] mt-[40px] bg-white flex items-center">
+			<div class="w-[1250px] h-[102px] pl-7 pr-[472px] py-[29px] bg-white rounded-[20px] justify-start items-start gap-[30px] inline-flex">
+				<div class="w-[230px] self-stretch p-2.5 bg-violet-50 rounded-[5px] flex-col justify-center items-start gap-2.5 inline-flex">
+					<div class="justify-start items-center inline-flex">
+						<div class="w-6 h-6 bg-zinc-200 rounded-[5px]"></div>
+						<div class="info__item">Місце зайняте</div>
+					</div>
+				</div>
+				<div class="self-stretch p-2.5 bg-violet-50 rounded-[5px] justify-start items-center inline-flex">
+					<div class="w-6 h-6 bg-indigo-600 rounded-[5px]"></div>
+					<div class="info__item">Місце вільне для хлопця</div>
+				</div>
+				<div class="self-stretch p-2.5 bg-violet-50 rounded-[5px] justify-center items-center inline-flex">
+					<div class="w-6 h-6 bg-rose-500 rounded-[5px]"></div>
+					<div class="info__item">Місце вільне для дівчини</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<Footer/>
+</Layout>
+
+<style>
+	.wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.floors li {
+		display:inline-block;
+		padding: 10px 20px;
+		border-radius: 4px;
+		background: #fff;
+		color: #2B3674;
+		font-size: 16px;
+		font-weight: 600;
+		margin-right: 14px;
+		font-family: 'Poppins', sans-serif;
+	}
+
+	.floors li:first-child {
+		background: #4318FF;
+		color: #FFF;
+	}
+
+	.dormitory_number {
+		padding: 0 40px;
+		border-radius: 5px;
+		color: #2B3674;
+		background: #fff;
+		font-family: 'Poppins', sans-serif;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 42px;
+		letter-spacing: -0.48px;
+	}
+
+	.info__item{
+		color: #2B3674;
+		font-family: 'Poppins', sans-serif;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		padding: 10px;
+	}
+
+</style>
