@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/layout.astro";
 import Header from "../components/Header.astro";
-import Block from "../components/Block.astro";
 import {dormitory7} from '../bd.json'
 import Footer from "../components/Footer.astro";
 
@@ -24,9 +23,18 @@ console.log(floors)
 			<div class="dormitory_number">Гуртожиток&nbsp№7</div>
 		</div>
 		<div class="flex-col items-center">
-			<Block cell="1" circuitLink="public/circuits/Group 322.svg"/>
-			<Block cell="2" circuitLink="public/circuits/Group 323.svg"/>
-			<Block cell="3" circuitLink="public/circuits/Group 324.svg"/>
+			<div class="mt-[30px]">
+				<div class="flex justify-center"><p class="cell inline-block">1&nbspклітка</p></div>
+				<div class="flex justify-center"><img class="circuit mt-[20px] w-[100%]" alt="cell" src="../assets/img/circuits/Group 322.svg"></img></div>
+			</div>
+			<div class="mt-[30px]">
+				<div class="flex justify-center"><p class="cell inline-block">2&nbspклітка</p></div>
+				<div class="flex justify-center"><img class="circuit mt-[20px] w-[100%]" alt="cell" src="../assets/img/circuits/Group 323.svg"></img></div>
+			</div>
+			<div class="mt-[30px]">
+				<div class="flex justify-center"><p class="cell inline-block">3&nbspклітка</p></div>
+				<div class="flex justify-center"><img class="circuit mt-[20px] w-[100%]" alt="cell" src="../assets/img/circuits/Group 324.svg"></img></div>
+			</div>
 		</div>
 		<div class="info h-[100px] w-[100%] rounded-[20px] mt-[40px] bg-white flex items-center">
 			<div class="w-[1250px] h-[102px] pl-7 pr-[472px] py-[29px] bg-white rounded-[20px] justify-start items-start gap-[30px] inline-flex">
@@ -94,6 +102,19 @@ console.log(floors)
 		font-weight: 400;
 		line-height: normal;
 		padding: 10px;
+	}
+
+	.cell {
+		padding: 10px 20px;
+		border-radius: 4px;
+		background: #FFF;
+		font-family: 'Poppins', sans-serif;
+		color: #2B3674;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		text-align: center;
 	}
 
 </style>

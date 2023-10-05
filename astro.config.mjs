@@ -4,5 +4,9 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  build: {
+    inlineStylesheets: "auto",
+  },
+  server: { port: 3345, host: false }
 });
