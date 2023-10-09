@@ -1,0 +1,85 @@
+---
+const {number, description, address, phone  } = Astro.props;
+---
+<div class="card mb-[20px]">
+    <div class="flex justify-between">
+        <h2 class="number h2 mb-[20px]">Гуртожиток №{number}</h2>
+        <a href="/" class="card_btn">Обрати</a>
+    </div>
+    <div class="flex">
+            <div class="mr-[45px]">
+                <h4 class="h4">Хто проживає в гуртожитку:</h4>
+                <p class="description mt-[18px] max-h-[100px] max-w-[241px]">{description}</p>
+            </div>
+            <div>
+                <h4 class="h4">Адреса гуртожитку та контакти:</h4>
+                <div class="info">
+                    <p class="address mt-[18px]">{address}</p>
+                    <p class="phone mt-[20px]">{phone}</p>
+                </div>
+
+            </div>
+        </div>
+</div>
+
+<style>
+    .card {
+        background: #F4F7FE;
+        border-radius: 10px;
+        padding: 26px;
+        color: #2B3674;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .card_btn {
+        display: inline-block;
+        padding: 10px 40px;
+        border-radius: 4px;
+        background: #4318FF;
+        color: #FFF;
+        font-weight: 600;
+        font-size: 16px;
+        min-height: 44px;
+    }
+
+    .h2 {
+        font-size: 24px;
+        letter-spacing: -0.48px;
+        margin-bottom: -10px;
+    }
+
+    .h4 {
+        font-size: 16px;
+        letter-spacing: -0.32px;
+    }
+
+    .description {
+        color: #A3AED0;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: normal;
+    }
+
+    .info {
+        color: #A3AED0;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: normal;
+    }
+
+    .phone:before {
+        content:url('../assets/img/phone.svg');
+        vertical-align: middle;
+        margin-right: 12px;
+    }
+
+    .address:before {
+        content:url('../assets/img/phone.svg');
+        vertical-align: middle;
+        margin-right: 12px;
+    }
+
+</style>
