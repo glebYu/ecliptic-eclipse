@@ -1,16 +1,8 @@
 ---
 import Layout from "../layouts/layout.astro";
 import Header from "../components/Header.astro";
-import {dormitory7} from '../bd.json'
 import Footer from "../components/Footer.astro";
 
-let floorNumber = dormitory7.floors
-let floors = []
-for (let i=1; i<=floorNumber; i++) {
-	floors.push(`${i} поверх`)
-}
-
-console.log(floors)
 ---
 
 <Layout title="Settlement | Knutd">
@@ -18,7 +10,13 @@ console.log(floors)
 	<div class="wrapper">
 		<div class="mt-[40px] flex justify-between">
 			<ul class="floors">
-				{floors.map(item => (<li> {item} </li>))}
+				<li class="active">1 поверх</li>
+				<li>2 поверх</li>
+				<li>3 поверх</li>
+				<li>4 поверх</li>
+				<li>5 поверх</li>
+				<li>6 поверх</li>
+				<li>7 поверх</li>
 			</ul>
 			<div class="dormitory_number">Гуртожиток&nbsp№7</div>
 		</div>
@@ -76,7 +74,7 @@ console.log(floors)
 		margin: 0 auto;
 	}
 
-	.floors li {
+	.floors > li {
 		display:inline-block;
 		padding: 10px 20px;
 		border-radius: 4px;
@@ -88,7 +86,7 @@ console.log(floors)
 		font-family: 'Poppins', sans-serif;
 	}
 
-	.floors li:first-child {
+	.floors > .active {
 		background: #4318FF;
 		color: #FFF;
 	}
@@ -130,3 +128,4 @@ console.log(floors)
 	}
 
 </style>
+
