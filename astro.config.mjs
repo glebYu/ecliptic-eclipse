@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   build: {
-    inlineStylesheets: "auto",
+    // inlineStylesheets: "auto",
   },
   server: { port: 3345, host: false }
 });

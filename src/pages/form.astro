@@ -1,0 +1,246 @@
+---
+import Layout from "../layouts/layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<Layout>
+<Header/>
+    <div class="selected_room">
+        <h1 class="title">Обраний гуртожиток та кімната:</h1>
+        <button class="selected_room_btn">Змінити</button>
+        <div class="room_data">
+            <div class="room_data_item">
+                <p>Гуртожиток:</p>
+                <span>№7</span>
+            </div>
+            <div class="room_data_item">
+                <p>Поверх:</p>
+                <span>1</span>
+            </div>
+            <div class="room_data_item">
+                <p>Клітка:</p>
+                <span>2</span>
+            </div>
+            <div class="room_data_item">
+                <p>Блок:</p>
+                <span>110</span>
+                <div class="gender">
+                    <div class="female">Жіночий блок</div>
+                    <div class="male hidden">Чоловічий блок</div>
+                </div>
+            </div>
+            <div class="room_data_item">
+                <p>Кімната:</p>
+                <span>A</span>
+            </div>
+        </div>
+    </div>
+    <div class="files_container">
+        <div class="files_body">
+            <form class="files_form">
+                <h1 class="title">Форма для студентів</h1>
+                <div class="form_wrapper">
+                    <div>
+                        <div class="form_item">
+                            <label for="PIP">ПІП</label>
+                            <input type="text" name="PIP" id="PIP" placeholder="ПІП">
+                        </div>
+                        <div class="form_item">
+                            <label for="group">Група</label>
+                            <input type="text" name="group" id="group" placeholder="Група">
+                        </div>
+                        <div class="form_item">
+                            <label for="street">Вулиця</label>
+                            <input type="text" name="street" id="street" placeholder="Вулиця">
+                        </div>
+                        <div class="form_item">
+                            <label for="house">Дім</label>
+                            <input type="text" name="house" id="house" placeholder="Дім">
+                        </div>
+                        <div class="form_item">
+                            <label for="room">Кімната</label>
+                            <input type="text" name="room" id="room" placeholder="Кімната">
+                        </div>
+                        <div class="form_item">
+                            <label for="dormitory">Гуртожиток</label>
+                            <input type="text" name="dormitory" id="dormitory" placeholder="Гуртожиток">
+                        </div>
+                        <div class="form_item">
+                            <label for="faculty">Факультет</label>
+                            <input type="text" name="faculty" id="faculty" placeholder="Факультет">
+                        </div>
+                        <div class="form_item">
+                            <label for="birth_date">Дата народження</label>
+                            <input type="text" name="birth_date" id="birth_date" placeholder="Дата народження">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form_item">
+                            <label for="course">Курс</label>
+                            <select name="course" id="course">
+                                <option disabled>Курс</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="form_item">
+                            <label for="start_of_study">Початок навчання</label>
+                            <input type="text" name="start_of_study" id="start_of_study" placeholder="Початок навчання">
+                        </div>
+                        <div class="form_item">
+                            <label for="completion_of_study">Закінчення навчання</label>
+                            <input type="text" name="completion_of_study" id="completion_of_study" placeholder="Закінчення навчання">
+                        </div>
+                        <div class="form_item">
+                            <label for="passport_series">Паспорт серія</label>
+                            <input type="text" name="passport_series" id="passport_series" placeholder="Паспорт серія">
+                        </div>
+                        <div class="form_item">
+                            <label for="passport_number">Паспорт номер</label>
+                            <input type="text" name="passport_number" id="passport_number" placeholder="Паспорт номер">
+                        </div>
+                        <div class="form_item">
+                            <label for="passport_issued">Паспорт виданий</label>
+                            <input type="text" name="passport_issued" id="passport_issued" placeholder="Паспорт виданий">
+                        </div>
+                        <div class="form_item">
+                            <label for="identification_index">Індекс інентифікації</label>
+                            <input type="text" name="identification_index" id="identification_index" placeholder="Індекс інентифікації">
+                        </div>
+                    </div>
+                </div>
+                <button class="files_btn">Відправити</button>
+            </form>
+        </div>
+    </div>
+<Footer/>
+</Layout>
+
+<style>
+    .selected_room {
+        width: 1250px;
+        background-color: #fff;
+        margin: 40px auto 20px auto;
+        border-radius: 10px;
+        padding: 26px;
+        font-style: normal;
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: -0.48px;
+        position: relative;
+    }
+
+    .selected_room_btn {
+        display: inline-block;
+        padding: 10px 40px;
+        border-radius: 4px;
+        background: #4318FF;
+        color: #FFF;
+        font-weight: 600;
+        font-size: 16px;
+        min-height: 44px;
+        position: absolute;
+        right: 26px;
+        top: 26px;
+    }
+
+    .room_data {
+        display: flex;
+    }
+
+    .room_data_item {
+        width: 105px;
+        margin-right: 50px;
+        font-size: 16px;
+        letter-spacing: -0.32px;
+        line-height: 30px;
+        color: #A3AED0;
+        text-align: center;
+
+    }
+
+    .room_data_item span {
+        color: #2B3674;
+        line-height: 24px;
+    }
+
+    .room_data_item .female {
+        font-size: 13px;
+        color: #FFF;
+        padding: 4px 10px;
+        border-radius: 5px;
+        background: #FF1A63;
+        line-height: normal;
+    }
+
+    .room_data_item .male {
+        font-size: 11px;
+        color: #FFF;
+        padding: 4px 10px;
+        border-radius: 5px;
+        background: #4318FF;
+        line-height: normal;
+    }
+
+
+    .files_body {
+        margin: auto;
+        width: 1250px;
+        background: #fff;
+        border-radius: 10px;
+        text-align: center;
+        padding: 70px 265px;
+        font-style: normal;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .form_wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .form_item {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        margin-bottom: 20px;
+    }
+
+    .form_item > label {
+        line-height: 30px;
+        letter-spacing: -0.32px;
+        text-transform: capitalize;
+    }
+
+    .form_item > input, .form_item > select {
+        height: 50px;
+        width: 330px;
+        padding: 10px;
+        font-weight: 500;
+        letter-spacing: -0.32px;
+        border-radius: 5px;
+        background: #F4F7FE;
+    }
+
+    .title {
+        color: #2B3674;
+        font-size: 36px;
+        line-height: 45px;
+        letter-spacing: -0.72px;
+        margin-bottom: 60px;
+    }
+
+    .files_btn {
+        padding: 10px 200px;
+        margin-top: 80px;
+        background: #4318FF;
+        border-radius: 4px;
+        color: #fff;
+    }
+</style>
